@@ -96,10 +96,13 @@ cart.removeItem("สบู่")
 // AI Generate
 const tags = ["react", "vue", "react", "angular", "vue", "react"];
 // เขียนเอง
-const countTags = tags.reduce((a, b) => {
-  a[b] = (a[b] || 0) + 1; 
-  return a;
-}, {});
+function countArr(arr){
+  return arr.reduce((a, b) => {
+    a[b] = (a[b] || 0) + 1; 
+    return a;
+  }, {});
+}
+
 
 
 

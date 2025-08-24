@@ -1,0 +1,23 @@
+1.สร้างไฟล์ mathUtils.js ที่มีฟังก์ชัน add(a, b) และ multiply(a, b) โดยใช้ named export 
+จากนั้น import ใน main.js และเปลี่ยนชื่อ multiply เป็น mul
+
+
+2.สร้างไฟล์ greeting.js ที่ export ฟังก์ชันแบบ default sayHello(name) และ import ใน main.js    
+
+
+3.สร้างไฟล์ data.js ที่ export ค่าแบบ default และ named จากนั้น import ทั้งคู่ใน index.js
+
+
+4.สร้างไฟล์ stringUtils.js ที่มีฟังก์ชัน:
+toUpper(str) → แปลงเป็นตัวใหญ่
+reverse(str) → กลับด้าน string
+แล้ว import ใน main.js
+
+
+5.สร้างไฟล์ random.js ที่มี default export ฟังก์ชัน getRandom(min, max) คืนค่าตัวเลขสุ่ม จากนั้นให้ import แบบ dynamic (import())
+
+
+6.สร้างไฟล์ arrayUtils.js ที่ export ฟังก์ชัน:
+sum(arr) → หาผลรวมใน array
+max(arr) → หาค่ามากสุดใน array
+จากนั้น import และทดสอบใน main.js

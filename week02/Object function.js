@@ -166,7 +166,7 @@ function groupByFirstLetterAI(words){
     return acc;
     }, {});
     return grouped
-}   
+}
 // console.log(groupByFirstLetterAI(words));
 
 

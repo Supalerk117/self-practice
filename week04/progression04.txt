@@ -1,0 +1,41 @@
+Async Fetch User Data (async/await)
+async function จะคืนค่าเป็น promise เสมอ ซึ่งสามารถเลือกรอผลลัพธ์ได้ 2 แบบ
+ในข้อนี้ใช้ await ในการรอซึ่ง มันคือการหยุดการทำงานโค้ดทั้งหมดเพื่อรอจนกว่า promise จะเสร็จ
+แล้วค่อยเก็บผลลัพธ์ไปใช้ต่อ โดย await จะใช้ได้แค่ใน async funtion เท่านั้น
+
+
+Async Chain API Calls (then)
+การรอผลลัพธ์อีกแบบคือการใช้ then จะเป็นการส่ง callback เข้าไปเพื่อให้ทำงานเมื่อ Promise สำเร็จ
+สามารถใช้ then เพื่อทำงานกับหลายๆ function และจะใช้นอกเหนือจาก async function เป็น function ปกติก็ได้
+
+
+Profile Formatter
+ได้ฝึกใช้ Object.entries() มันคือการเปลี่ยน format object ให้อยู่ในรูป array ทั้งหมด
+ยกตัวอย่างเป็น obj = {fname : "Supalerk",lname : "Kamolnetr"} 
+ใช้ .entries จะกลายเป็น obj = [ ["name","poom"] , ["lname" : "Kamolnetr"] ]
+เสร็จแล้วเอาไป map ต่อโดยจะมีค่าที่ต้องใช้ 2 ค่าคือ [key,value]
+เริ่มด้วบการ copy index แรกของ string key มาแล้วใช้ .toUpperCase() เพื่อทำให้เป็นตัวพิมใหญ่
+และ + กับ key ที่เหลือ โดย slice(1) เอา index ตั้งแต่ตัวที่ 2 เป็นต้นไปมารวม
+แล้วก็เอา value มาเติม และ join() กันออกมาเป็น string
+
+
+Count Properties
+ใช้ Object.keys() เพื่อเก็บ key ทั้งหมดใน object ให้อยู่ในรูป array
+แล้วใช้ .length เพื่อนับจำนวนใน array
+
+
+Filter by Value
+ใช้ Object.entries() ทำให้เป็น object ในรูป array ก่อนแล้ว filter หา
+ว่า index ที่ 1 ตัวไหนมีค่า >= 70 แล้วก็ใช้ Object.fromEntries() เพื่อทำให้ array กลับไปเป็น format ของ object
+
+
+Merge Objects
+ใช้ spread operator (...) เพื่อรวม object เข้าด้วยกัน
+
+
+Sort Object by Value
+ใช้ Object.entries() ก่อนเพื่อทำให้เป็นรูป array แล้วก็ .sort() โดยที่ชี้ไปหา index ที่ 1 แล้วเรียงจากมากไปน้อย
+
+
+Group by First Letter
+ข้อนี้เคยทำใน week02 แล้วแต่ทำอีกครั้งเป็นการทวนความจำ

@@ -1,0 +1,78 @@
+วันนี้เอาโจทย์จาก practice ของอาจารย์มาทำ + chatgpt เจนโจทย์ที่คล้ายๆกับของอาจารย์ และเพิ่มเรื่อง destructuring
+
+1.function addProperty(obj, key, value)
+การเพ่ิม key และ value ใน obj ปกติ แล้ว return ค่า obj ที่เพิ่ม key กับ value แล้ว
+
+2.Write a function mergeObject(obj1, obj2)
+return object ตัวใหม่โดยใช้ spread operator ในการรวม 2 obj เข้าด้วยกัน
+
+3.Write a function getFreqOfWords(sentence)
+ข้อนี้เคยทำใน self practice ครั้งก่อนและในคาบ ซึ่งนี่ก็ algortithym เดิม
+เริ่มจากทำให้เป็น lowercase ก่อนและ split(" ") แยก เป็นคำๆ
+ซึ่งต้อง filter เอาตัวที่มีค่าไม่เท่ากับ "" เพื่อไม่ให้โค้ดเกิดบั๊ก
+ต่อมาก็ reduce ให้เป็น object เดียวโดยการประกาส 2 ค่า
+ค่านึง(a)เอาไว้เก็บ object เดิม อีกค่านึง(b)เก็บตัวที่กำลังจะ loop ใน array 
+แล้วให้ค่่านั้นเป็น key ใน object จะได้อยู่ในรูปนี้ a[b]
+แล้วก็เช็คโดยใช้ ( a[b] || 0 ) ดูว่า key นั้นๆมันเคยมีรึยัง โดยถ้ามันยังไม่มีมันจะเป็น undefined || 0
+ซึ่งการใช้ || ถ้ามันเป็น falsy ทั้ง 2 ฝั่งมันจะเอาค่าฝั่งขวา แต่ถ้าเป็น truely ทั้งคู่จะเอาค่าฝั่งซ้าย
+ดังนั้นมันเลยจะได้ค่าเป็น 0 แล้วก็ + 1 เพื่อนับเป็นค่าแรก
+กลับกันถ้า a[b] เคยมีแล้ว มันจะเป็นค่า truely (มากกว่า 0) จะได้ (true) || 0
+มันก็จะได้เป็นค่า (true) แล้วก็เอาไปบวก 1 เพื่อนับต่อไป
+โดยทุกครั้งที่จบ loop ในแต่ละครั้งของ reduce มันจะ return a หรือค่า object เดิมที่เก็บไว้เสมอ
+
+4.นับจำนวนตัวอักษรที่ซ้ำในประโยค
+เหมือนข้อ 3 แต่ต่างกันตรงที่ split("") เป็นตัวอักษรไม่ได้ spilt เป็นคำและก็ filter เอาแค่ค่าที่ไม่เท่ากับ " " เพื่อไม่ให้โค้ดเกิดบั๊ก
+เพิ่มเติมคืออาจจะมีค่าที่เป็นตัวอักษรพิเศษ เช่น !,?,@ ใน array ตอน filter เลยเพ่ิมเงื่อนไขคือ จะต้องเป็นตัวอักษร [a-z] เท่านั้น
+เลยใช้ /[a-z]/i.test(a)
+ข้อนี้มีอีกวิธีที่ทำได้คือใช้ match() แทน split() และ filter() เป็นการรวบวิธีและเอาแค่ [a-z] แบบ global และก็เอาไป reduce ปกติ
+
+5.Write a function mergeAndDestructure(obj1, obj2)
+ทำเหมือนข้อ 2 แต่ return เป็นค่่าที่ destructure แล้ว
+
+ุ6.Write a function extractAndRename(obj)
+ข้อนี้ทำให้ได้ keyword ใหม่คือ exextracts properties มันก็คือการ destructure นั่นแหละ
+โดยข้อนี้ก็ destructure ค่า name กับ age ออกมาจาก parameter obj ก่อน
+แล้วก็มาเรียกใช้ มันตอน return object ใหม่ที่เปลี่ยนช่ือจาก name เป็น fullName และ age เป็น yearsOld
+แต่ก็อยากลองเขียน function ปกติแบบไม่ destructure ดู ก็ทำได้โดยการ return object ใหม่
+ที่ดึงค่า name กับ age จาก parameterมาใส่ใน value ที่ key ชื่อ fullName กับ yearsOld
+
+7.Destructure User Info
+ข้อนี้เป็นการ destructure แบบ object ซ้อน object ทำให้เข้าใจ syntax การเข้าถึง object มากขึ้น
+
+8.Rename key from pararmeter
+destructure ปกติแต่ใช้ [] เพื่อให้ js รู้ว่าเราจะเอา oldkey กับ newkey ที่รับมาจาก parameter มาใส่เป็นชื่อ key อันใหม่
+เพราะถ้า เขียน {oldkey : value} js จะเข้าใจว่า "oldkey" คือชื่อ key เลยเพ่ิมเงื่อนไขคือ
+
+9.Destructure Function Params
+destructure ปกติแล้ว return แค่ค่าที่ต้องการ
+
+10.Write a function removeDuplicateWords(sentence)
+ใช้ set ในการเก็บค่าที่มีแล้วเพราะมันไม่เก็บตัวซ้ำเหมือน array
+เร่ิมจาก split sentence ออกมาให้เป็น array แล้ว filter
+
+11.11.Write a function findValue(arr)
+return object โดยให้ค่า value ขงแต่ละ key เป็น logic ตามโจทย์ซึ่งใช้ reduce ในการหาค่าทั้งหมด
+
+12.Write a function convertToUppercase(arr)
+map ค่า array ให้เป็น toUpperCase() ทั้งหมด
+
+13.Write a function findMax(arr)
+return ค่าที่มากที่สุดโดยใช้ reduce กับ ternary operator โดยเทียบกันทีละ 2 ค่าใน array เช่น
+index[0] > index[1]? ถ้าใช่ ให้ค่านั้นเป็น index[0] ถ้าไม่ก็ index[1],
+index[1] > index[2]? ถ้าใช่ ให้ค่านั้นเป็น index[1] ถ้าไม่ก็ index[2] เป็นแบบนี้จนจบ array
+
+14.Write a function removeFalsyValues(arr)
+ที่ใช้ filter(Boolean) เพราะ method filter จะเอาค่าที่เป็นจริงเสมอ (truely)
+แล้วถ้าใช้ Boolean มันก็จะเปลี่ยนค่าให้เป็นแค่ true หรือ false ก็จะตรงตามความต้องการเลย
+
+15.doubleAndFilterEvenNumbers(arr)
+filter หาเอาเลขที่หารเอากับ 2 แล้วลงตัวหรือ = 0 แล้วก็ map ค่าข้างใน array ให้คูณ 2
+
+16.Write a function populateArray(length, value)
+ใช้ for loop ปกติโดยประกาส result = [] แล้ว push value เข้าไปตามจำนวน length
+
+17.Write a function squareNumbers(arr)
+map กำลัง 2 เข้าไปใน array
+
+18.Write a function processNumbers(arr)
+filter หาเลขคี่ก่อนแล้ว reduce เอามายกกำลัง 2 แล้วบวกกัน
